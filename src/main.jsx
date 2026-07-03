@@ -23,7 +23,8 @@ import {
 import './styles.css';
 
 const profile = {
-  name: 'Amrit Gupta',
+  name: 'Amrit Laa Gupta',
+  initials: 'ALG',
   role: 'Senior Software Developer',
   location: 'India',
   email: 'amritgupta023@gmail.com',
@@ -232,9 +233,9 @@ export default function App() {
 function Header({ isMenuOpen, setIsMenuOpen }) {
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="Amrit Gupta home">
-        <span>AG</span>
-        <strong>Amrit Gupta</strong>
+      <a className="brand" href="#top" aria-label={`${profile.name} home`}>
+        <span>{profile.initials}</span>
+        <strong>{profile.name}</strong>
       </a>
       <nav className={isMenuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation">
         {navItems.map((item) => (
@@ -289,7 +290,7 @@ function Hero() {
       <aside className="profile-panel" aria-label="Profile details">
         <div className="portrait-orbit">
           <div className="portrait">
-            <span>AG</span>
+            <span>{profile.initials}</span>
           </div>
           <div className="orbit-chip chip-react">
             <Blocks aria-hidden="true" />
